@@ -14,7 +14,7 @@ class ProfileController extends Controller
         $this->middleware('auth');
     }
     
-    public function index(){
+    public function index(){         
         $user = User::find(Auth::user()->id);
         $name = $user->name;
         $email = $user->email;
@@ -45,5 +45,15 @@ class ProfileController extends Controller
         }
         $user->save();
         return Redirect('profile');
+    }
+    public function delete(Request $request){
+        $data = $request->all();
+        if(!Hash::check($data['password'],User::find(Auth::user()->id)->password)){
+            return back()->with("status", "Wrong password");
+        }
+        User::find(Auth::user()->id)->delete();
+         echo "<script>alert('Your profile was deleted successfully');document.location='/'</script>";
+        //return Redirect::to('/')->withMessage('Your profile was deleted successfully');
+        
     }
 }

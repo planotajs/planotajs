@@ -24,3 +24,4 @@ Route::get('/statistics', 'StatisticsController@statistics');
 Route::get('/add', 'AddEditController@add');
 Route::get('/edit', 'AddEditController@edit');
 Route::post('/profile/edit', 'ProfileController@store');
+Route::post('/profile/delete', 'ProfileController@delete');
