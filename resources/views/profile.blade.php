@@ -19,6 +19,11 @@
                         @endif
                         <br>Registered at: <b>{{$created}}</b>
                         <br><br>
+                        @if (session('status'))
+                            <div class="alert alert-danger">
+                                {{ session('status') }}
+                            </div>
+                        @endif
                         <div id="form">
                         {{ Form::open(['url'=>'/profile/edit']) }}
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -69,13 +74,13 @@
                     </div>
                     </div>
                     <br>
-                    <div class="form-group{{ $errors->has('npassword2') ? ' has-error' : '' }}">
-                    {!! Form::label('npassword2', 'New password again', ['class' => 'col-md-4 control-label']) !!}
+                    <div class="form-group{{ $errors->has('npassword_confirmation') ? ' has-error' : '' }}">
+                    {!! Form::label('npassword_confirmation', 'New password confirmation', ['class' => 'col-md-4 control-label']) !!}
                     <div class="col-md-6">
-                    {!! Form::password('npassword2', ['class' => 'form-control']) !!}
-                    @if ($errors->has('npassword2'))
+                    {!! Form::password('npassword_confirmation', ['class' => 'form-control']) !!}
+                    @if ($errors->has('npassword_confirmation'))
                         <span class="help-block">
-                            <strong>{{ $errors->first('npassword2') }}</strong>
+                            <strong>{{ $errors->first('npassword_confirmation') }}</strong>
                         </span>
                     @endif  
                     </div>

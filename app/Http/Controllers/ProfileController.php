@@ -20,24 +20,29 @@ class ProfileController extends Controller
         $email = $user->email;
         $role = $user->role;
         $created = $user->created_at;
-        
         return view('profile', array('name' => $name, 'email' => $email, 'role' => $role, 'created' => $created));
     }
     public function store(Request $request){
         $data = $request->all();
-            
         $rules = array(
             'name' => 'min:3|max:250|required',
             'email' => 'required|max:250|email',
             'cpassword' => 'required',
+            'npassword' => 'min:6|confirmed|sometimes|different:cpassword|nullable'
         );
+        if($data['npassword']){
+            $rules['npassword_confirmation']='required';
+        }
         $this->validate($request, $rules);
         if(!Hash::check($data['cpassword'],User::find(Auth::user()->id)->password)){
-            return Redirect::back()->withErrors(['cpassword', 'Wrong password']);
+            return back()->with("status", "Wrong current password");
         }
         $user = User::find(Auth::user()->id);
         $user->update(['name' => $data['name']]);
         $user->update(['email' => $data['email']]);
+        if($data['npassword']){
+            $user->update(['password'=>bcrypt($data['npassword'])]);
+        }
         $user->save();
         return Redirect('profile');
     }
