@@ -48,7 +48,7 @@
                     <div class="form-group{{ $errors->has('cpassword') ? ' has-error' : '' }}">
                     {!! Form::label('cpassword', 'Current password (*)', ['class' => 'col-md-4 control-label']) !!}
                     <div class="col-md-6">
-                    {!! Form::text('cpassword', '', ['class' => 'form-control']) !!}
+                    {!! Form::password('cpassword', ['class' => 'form-control']) !!}
                     @if ($errors->has('cpassword'))
                         <span class="help-block">
                             <strong>{{ $errors->first('cpassword') }}</strong>
@@ -60,7 +60,7 @@
                     <div class="form-group{{ $errors->has('npassword') ? ' has-error' : '' }}">
                     {!! Form::label('npassword', 'New password', ['class' => 'col-md-4 control-label']) !!}
                     <div class="col-md-6">
-                    {!! Form::text('npassword', '', ['class' => 'form-control']) !!}
+                    {!! Form::password('npassword', ['class' => 'form-control']) !!}
                     @if ($errors->has('npassword'))
                         <span class="help-block">
                             <strong>{{ $errors->first('npassword') }}</strong>
@@ -72,7 +72,7 @@
                     <div class="form-group{{ $errors->has('npassword2') ? ' has-error' : '' }}">
                     {!! Form::label('npassword2', 'New password again', ['class' => 'col-md-4 control-label']) !!}
                     <div class="col-md-6">
-                    {!! Form::text('npassword2', '', ['class' => 'form-control']) !!}
+                    {!! Form::password('npassword2', ['class' => 'form-control']) !!}
                     @if ($errors->has('npassword2'))
                         <span class="help-block">
                             <strong>{{ $errors->first('npassword2') }}</strong>
@@ -91,10 +91,15 @@
                             document.getElementById('form').style.display='block';
                             document.getElementById('edit').style.display='none';
                         }
+                        @if ($errors=='[]')
                         document.getElementById('form').style.display='none';
+                        document.getElementById('edit').style.display='none';
+                        @endif
                         document.getElementById("edit").addEventListener("click", update);
-                        </script>
+                        </script>                   
+                        @if($errors=='[]')
                         <button class ='btn btn-primary' id="edit" type="button" onclick="update();">Update profile</button><br><br>
+                        @endif
                     </div>
                 </div>
             </div>
