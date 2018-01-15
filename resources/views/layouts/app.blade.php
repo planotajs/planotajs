@@ -12,6 +12,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+    <!--JQuery-->
+    <script src="/js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -36,7 +39,11 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li><a href="/overview">Overview</a></li>
+                        <li><a href="/add">Add</a></li>
+                        <li><a href="/edit">Edit</a></li>
+                        <li><a href="/statstics">Statistics</a></li>
+                        <li><a href="/profile">Profile</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
