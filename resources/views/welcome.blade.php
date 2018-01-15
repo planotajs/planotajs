@@ -12,12 +12,17 @@
         
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-         
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h4>Home</h4></div>
 
-            <div class="content">
+                    <div class="panel-body">What up</div>
+                </div>
             </div>
         </div>
+    </div>
     </body>
     @endsection
 </html>
