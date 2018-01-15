@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="#">Ienākt</a>
+                    <a href="/login">Ienākt</a>
                     <a href="#">Par mums</a>
                 </div>
             </div>
