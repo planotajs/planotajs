@@ -22,6 +22,7 @@ Route::get('/profile', 'ProfileController@index');
 Route::get('/overview', 'StatisticsController@overview');
 Route::get('/statistics', 'StatisticsController@statistics');
 Route::get('/add', 'AddEditController@add');
+Route::get('/edit/{id}', 'AddEditController@editrecord');
 Route::get('/edit', 'AddEditController@edit');
 Route::post('/profile/edit', 'ProfileController@store');
 Route::post('/profile/delete', 'ProfileController@delete');

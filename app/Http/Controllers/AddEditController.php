@@ -31,6 +31,10 @@ class AddEditController extends Controller
         return view('edit', array('records'=>$records));
     }
     
+    public function editrecord($id){            
+        return view('editrecord');
+    }
+    
     public function store(Request $request){
         $data = $request->all();
         $rules = array(
