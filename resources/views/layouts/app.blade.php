@@ -41,8 +41,7 @@
                         <li><a href="/overview">Overview</a></li>
                         <li><a href="/add">Add</a></li>
                         <li><a href="/edit">Edit</a></li>
-                        <li><a href="/statistics">Statistics</a></li>
-                        <li><a href="/profile">Profile</a></li>
+                        <li><a href="/statistics">Statistics</a></li>                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -52,7 +51,7 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                            
+                                       <li><a href="/profile">Profile</a></li>
                                        <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
