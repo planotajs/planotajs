@@ -85,8 +85,10 @@
                     @endif  
                     </div>
                     </div>
-                    <div class="col-md-8 col-md-offset-4">
-                        {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
+                    
+                    <div class="col-md-8 col-md-offset-4">                        
+                        <button class ='btn btn-primary' id="cancel1" type="button" onclick="cancel();">Cancel</button>
+                        {!! Form::submit('Update profile', ['class' => 'btn btn-primary']) !!}                        
                     </div>
                     {!! Form::close() !!}
                     <br><br><br>
@@ -103,18 +105,27 @@
                                     </span>
                                 @endif  
                                 </div>
-                                </div>
+                                </div>                            
                                 <div class="col-md-8 col-md-offset-4">
-                                    {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
+                                     <button class ='btn btn-primary' id="cancel2" type="button" onclick="cancel();">Cancel</button>
+                                    {!! Form::submit('Delete profile', ['class' => 'btn btn-primary']) !!}                                   
                                 </div>
+                            
                              {!! Form::close() !!}
+                             
                         </div>
+                        
+                        @if($errors=='[]')
+                        <button class ='btn btn-primary' id="edit" type="button" onclick="update();">Update profile</button><br><br>
+                        <button class ='btn btn-primary' id="del" type="button" onclick="deleteprofile();">Delete profile</button><br><br>
+                        @endif
+                        
                         <script>
                         function update(){
                             document.getElementById('form').style.display='block';
                             document.getElementById('edit').style.display='none';
                             document.getElementById('del').style.display='none';
-                        }
+                        }                       
                         function deleteprofile(){
                             document.getElementById('delete').style.display='block';
                             document.getElementById('del').style.display='none';
@@ -122,16 +133,17 @@
                         }
                         @if ($errors=='[]')
                         document.getElementById('form').style.display='none';
-                        document.getElementById('edit').style.display='none';
                         document.getElementById('delete').style.display='none';
                         @endif
+                        
+                        function cancel(){
+                            location.reload();                             
+                        }
                         document.getElementById("edit").addEventListener("click", update);
                         document.getElementById("del").addEventListener("click", deleteprofile);
-                        </script>                   
-                        @if($errors=='[]')
-                        <button class ='btn btn-primary' id="edit" type="button" onclick="update();">Update profile</button><br><br>
-                        <button class ='btn btn-primary' id="del" type="button" onclick="deleteprofile();">Delete profile</button><br><br>
-                        @endif
+                        document.getElementById("cancel1").addEventListener("click", cancel);
+                        document.getElementById("cancel2").addEventListener("click", cancel);
+                        </script>
                     </div>
                 </div>
             </div>
