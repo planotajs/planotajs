@@ -15,12 +15,13 @@
                                 {!! Form::label('name', 'Name (*)', ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
                                 {!! Form::text('name', $record->name, ['class' => 'form-control']) !!}
+                                </div>
                                  @if ($errors->has('name'))
+                                 <br><br>
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif    
-                                </div>
                             </div>
                             <br><br>
                             <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
@@ -31,6 +32,7 @@
                                 {!! Form::radio('type', 'expense', !$income) !!}
                                 Expense
                                  @if ($errors->has('type'))
+                                 <br><br>
                                     <span class="help-block">
                                         <strong>{{ $errors->first('type') }}</strong>
                                     </span>
@@ -43,6 +45,7 @@
                                 <div class="col-md-6">
                                 {!! Form::select('category', $categories, $record->category_id, ['class' => 'form-control']) !!}
                                  @if ($errors->has('category'))
+                                 <br><br>
                                     <span class="help-block">
                                         <strong>{{ $errors->first('category') }}</strong>
                                     </span>
@@ -55,6 +58,7 @@
                                 <div class="col-md-6">
                                 {!! Form::date('date', $record->date, ['class' => 'form-control']) !!}
                                  @if ($errors->has('date'))
+                                 <br><br>
                                     <span class="help-block">
                                         <strong>{{ $errors->first('date') }}</strong>
                                     </span>

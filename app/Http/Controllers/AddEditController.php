@@ -38,7 +38,7 @@ class AddEditController extends Controller
     }
     
     public function editrecord($id){
-        $record = Records::find($id);
+        $record = Records::findOrFail($id);
         $cat = Categories::all()->pluck('name');     
         $count = count($cat);
         for($i=$count; $i>0; $i--){

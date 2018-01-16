@@ -15,13 +15,14 @@
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                 {!! Form::label('name', 'Name (*)', ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
-                                {!! Form::text('name', '', ['class' => 'form-control']) !!}
+                                {!! Form::text('name', '', ['class' => 'form-control']) !!}                                 
+                                </div>
                                  @if ($errors->has('name'))
+                                 <br><br>
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
-                                @endif    
-                                </div>
+                                @endif   
                             </div>
                             <br><br>
                             <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
@@ -32,6 +33,7 @@
                                 {!! Form::radio('type', 'expense', ['class' => 'form-control']) !!}
                                 Expense
                                  @if ($errors->has('type'))
+                                 <br><br>
                                     <span class="help-block">
                                         <strong>{{ $errors->first('type') }}</strong>
                                     </span>
@@ -44,6 +46,7 @@
                                 <div class="col-md-6">
                                 {!! Form::select('category', $categories, 's', ['class' => 'form-control']) !!}
                                  @if ($errors->has('category'))
+                                 <br><br>
                                     <span class="help-block">
                                         <strong>{{ $errors->first('category') }}</strong>
                                     </span>
@@ -56,6 +59,7 @@
                                 <div class="col-md-6">
                                 {!! Form::date('date', '', ['class' => 'form-control']) !!}
                                  @if ($errors->has('date'))
+                                 <br><br>
                                     <span class="help-block">
                                         <strong>{{ $errors->first('date') }}</strong>
                                     </span>
@@ -68,6 +72,7 @@
                                 <div class="col-md-6">
                                 {!! Form::number('sum', '', ['class' => 'form-control', 'step' => '0.01']) !!}
                                  @if ($errors->has('sum'))
+                                 <br><br>
                                     <span class="help-block">
                                         <strong>{{ $errors->first('sum') }}</strong>
                                     </span>
