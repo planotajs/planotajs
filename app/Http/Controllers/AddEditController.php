@@ -27,7 +27,8 @@ class AddEditController extends Controller
     }
     
     public function edit(){
-        return view('edit');
+        $records = Records::where('user_id', Auth::user()->id)->get();        
+        return view('edit', array('records'=>$records));
     }
     
     public function store(Request $request){
