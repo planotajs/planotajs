@@ -31,6 +31,12 @@ class AddEditController extends Controller
         return view('edit', array('records'=>$records));
     }
     
+    public function delete(Request $request){
+        $data = $request->all();
+        $rec = Records::find($data['id2'])->delete();
+        return Redirect::to('/edit');
+    }
+    
     public function editrecord($id){
         $record = Records::find($id);
         $cat = Categories::all()->pluck('name');     

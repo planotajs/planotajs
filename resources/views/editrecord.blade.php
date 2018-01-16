@@ -79,6 +79,13 @@
                             {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
                             </div>                            
                             {!! Form::close() !!}
+                            <br><br>
+                            {{ Form::open(['url'=>'/edit/delete']) }}
+                                {{ Form::hidden('id2', $record->id) }}
+                                <div class="col-md-8 col-md-offset-4">
+                                    {!! Form::submit('Delete record', ['class' => 'btn btn-primary']) !!}
+                                </div>
+                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>

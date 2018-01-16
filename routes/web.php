@@ -28,3 +28,4 @@ Route::post('/profile/edit', 'ProfileController@store');
 Route::post('/profile/delete', 'ProfileController@delete');
 Route::post('/add', 'AddEditController@store');
 Route::post('/edit', 'AddEditController@editnstore');
+Route::post('/edit/delete', 'AddEditController@delete');
