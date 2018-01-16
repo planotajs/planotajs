@@ -18,7 +18,7 @@ class CreateRecordsTable extends Migration
             $table->string('name');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');
-            $table->integer('sum');
+            $table->float('sum');
             $table->date('date');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');

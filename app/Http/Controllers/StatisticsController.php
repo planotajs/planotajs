@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Records;
+use Auth;
 
 class StatisticsController extends Controller
 {
@@ -12,7 +14,9 @@ class StatisticsController extends Controller
     }
     
     public function overview(){
-        return view('overview');
+        $records = Records::where('user_id', Auth::user()->id)->orderBy('date', 'desc')->get();  
+        $sum = Records::where('user_id', Auth::user()->id)->sum('sum');
+        return view('overview', array('records' => $records, 'sum' => $sum));
     }
     
     public function statistics(){

@@ -66,7 +66,7 @@
                             <div class="form-group{{ $errors->has('sum') ? ' has-error' : '' }}">
                                 {!! Form::label('sum', 'Sum (*)', ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
-                                {!! Form::number('sum', '', ['class' => 'form-control']) !!}
+                                {!! Form::number('sum', '', ['class' => 'form-control', 'step' => '0.01']) !!}
                                  @if ($errors->has('sum'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('sum') }}</strong>
