@@ -27,3 +27,4 @@ Route::get('/edit', 'AddEditController@edit');
 Route::post('/profile/edit', 'ProfileController@store');
 Route::post('/profile/delete', 'ProfileController@delete');
 Route::post('/add', 'AddEditController@store');
+Route::post('/edit', 'AddEditController@editnstore');

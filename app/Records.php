@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Records extends Model
 {
+    protected $fillable = ['name','date','category_id', 'sum'];
     public function category() {
         return $this->belongsTo('App\Categories');
     }

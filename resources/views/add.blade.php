@@ -77,7 +77,7 @@
                             <br><br>
                             <div class="col-md-8 col-md-offset-4">
                             {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
-                            </div>
+                            </div>                            
                             {!! Form::close() !!}
                         </div>
                     </div>
