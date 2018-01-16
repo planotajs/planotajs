@@ -38,7 +38,7 @@ class AddEditController extends Controller
             'type' => 'required|in:income,expense',
             'category' => 'required|exists:categories,id',
             'date' => 'required|date',
-            'sum' => 'required|numeric|min:0'
+            'sum' => 'required|numeric|min:0.01'
         );
         $this->validate($request, $rules);
         $rec = new Records();
