@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Records;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -18,7 +19,8 @@ class AdminController extends Controller
         return view('addcat');
     }
     public function viewusers(){
-        return view('viewusers');
+        $records = User::all();
+        return view('viewusers', array('records'=>$records));
     }
     public function viewall(){
         $records = Records::all();
