@@ -30,4 +30,8 @@ class User extends Authenticatable
     public function records() {
         return $this->hasMany('App\Records');
     }
+    
+    public function isAdmin() {
+        return ($this->role == 2);
+    }
 }
