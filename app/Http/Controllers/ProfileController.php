@@ -56,4 +56,7 @@ class ProfileController extends Controller
         //return Redirect::to('/')->withMessage('Your profile was deleted successfully');
         
     }
+    public function contact(){
+        return view('contact');
+    }
 }
