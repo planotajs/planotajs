@@ -13,8 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    @foreach ($errors->all() as $error)
+                        {{ $error }}
+                    @endforeach    
                 </div>
             </div>
         </div>

@@ -44,7 +44,10 @@
                         <li><a href="/overview">Overview</a></li>
                         <li><a href="/add">Add</a></li>
                         <li><a href="/edit">Edit</a></li>
-                        <li><a href="/statistics">Statistics</a></li>                        
+                        <li><a href="/statistics">Statistics</a></li>
+                        @if ( !Auth::guest() && Auth::user()->isAdmin() )
+                            <li><a href="/admin">Admin</a></li>
+                        @endif                           
                     </ul>
 
                     <!-- Right Side Of Navbar -->
