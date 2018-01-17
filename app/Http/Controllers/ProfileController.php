@@ -67,11 +67,9 @@ class ProfileController extends Controller
         );
         $this->validate($request, $rules);
         $message = $data['message'];
-        $data2 = array('message'=> $message);   
         Mail::raw($message, function($message) {
-           $message->to('dragels@inbox.lv')->subject
-              ('FinancialPlanner message');
-           $message->from('dragels@inbox.lv', Auth::user()->email);
+           $message->to(config('mail.username'))->subject('FinancialPlanner message');
+           $message->from(config('mail.username'), Auth::user()->email);
         });
         return back()->with("status",'Message sent successfully!');
     }
