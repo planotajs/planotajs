@@ -13,7 +13,7 @@
             background-color: rgba(255,255,255,0.9)!important;  
             color: black!important;
         }
-        li {
+        .jumbotron li {
             font-size: 17px;
         }
     </style>
