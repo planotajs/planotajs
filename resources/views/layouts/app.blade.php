@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<style>
+    body {
+            background: url(img/background1.jpg) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+</style>
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
