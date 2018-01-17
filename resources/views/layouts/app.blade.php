@@ -9,7 +9,7 @@
  <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@lang('messages.name')</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -44,22 +44,22 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        @lang('messages.name')
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="/overview">Overview</a></li>
-                        <li><a href="/add">Add</a></li>
-                        <li><a href="/edit">Edit</a></li>
-                        <li><a href="/statistics">Statistics</a></li>
+                        <li><a href="/overview">@lang('messages.overview')</a></li>
+                        <li><a href="/add">@lang('messages.add')</a></li>
+                        <li><a href="/edit">@lang('messages.edit')</a></li>
+                        <li><a href="/statistics">@lang('messages.statistics')</a></li>
                         @if ( !Auth::guest() && Auth::user()->isAdmin() )
-                            <li><a href="/admin">Admin</a></li>
+                            <li><a href="/admin">@lang('messages.admin')</a></li>
                         @endif      
                         @if ( !Auth::guest() && !Auth::user()->isAdmin() )
-                            <li><a href="/contact">Contact us</a></li>
+                            <li><a href="/contact">@lang('messages.contact')</a></li>
                         @endif       
                     </ul>
 
@@ -67,14 +67,14 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}">@lang('messages.login')</a></li>
+                            <li><a href="{{ route('register') }}">@lang('messages.register')</a></li>
                         @else
-                                       <li><a href="/profile">Profile</a></li>
+                                       <li><a href="/profile">@lang('messages.profile')</a></li>
                                        <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                            Logout
+                            @lang('messages.logout')
                                         </a></li>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

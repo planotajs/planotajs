@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Records;
 use Auth;
+use App;
 
 class StatisticsController extends Controller
 {
