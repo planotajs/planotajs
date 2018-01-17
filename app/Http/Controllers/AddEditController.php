@@ -39,6 +39,9 @@ class AddEditController extends Controller
     
     public function editrecord($id){
         $record = Records::findOrFail($id);
+        if(Auth::user()->id!=Records::find($id)->user_id&&!Auth::user()->isAdmin()){
+            return redirect::to('/home')->withErrors('Access denied!');
+        }
         $cat = Categories::all()->pluck('name');     
         $count = count($cat);
         for($i=$count; $i>0; $i--){

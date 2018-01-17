@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Records;
 
 class AdminController extends Controller
 {
@@ -16,10 +17,11 @@ class AdminController extends Controller
     public function addcat(){
         return view('addcat');
     }
-    public function viewall(){
-        return view('viewrecords');
-    }
     public function viewusers(){
         return view('viewusers');
+    }
+    public function viewall(){
+        $records = Records::all();
+        return view('viewrecords', array('records'=>$records));
     }
 }
