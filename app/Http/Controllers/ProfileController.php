@@ -6,6 +6,7 @@ use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Hash;
+use Mail;
 
 class ProfileController extends Controller
 {
@@ -58,5 +59,20 @@ class ProfileController extends Controller
     }
     public function contact(){
         return view('contact');
+    }
+    public function sendmessage(Request $request){
+        $data = $request->all();
+        $rules = array(
+            'message' => 'min:3|max:10000|required',
+        );
+        $this->validate($request, $rules);
+        $message = $data['message'];
+        $data2 = array('message'=> $message);   
+        Mail::raw($message, function($message) {
+           $message->to('dragels@inbox.lv')->subject
+              ('FinancialPlanner message');
+           $message->from('dragels@inbox.lv', Auth::user()->email);
+        });
+        return back()->with("status",'Message sent successfully!');
     }
 }

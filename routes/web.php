@@ -34,3 +34,4 @@ Route::get('/admin/viewall', 'AdminController@viewall');
 Route::get('/admin/viewusers', 'AdminController@viewusers');
 Route::get('/admin/addcat', 'AdminController@addcat');
 Route::get('/contact', 'ProfileController@contact');
+Route::post('/contact', 'ProfileController@sendmessage');
