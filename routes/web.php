@@ -30,3 +30,6 @@ Route::post('/add', 'AddEditController@store');
 Route::post('/edit', 'AddEditController@editnstore');
 Route::post('/edit/delete', 'AddEditController@delete');
 Route::get('/admin', 'AdminController@index');
+Route::get('/admin/viewall', 'AdminController@viewall');
+Route::get('/admin/viewusers', 'AdminController@viewusers');
+Route::get('/admin/addcat', 'AdminController@addcat');

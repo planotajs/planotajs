@@ -13,4 +13,13 @@ class AdminController extends Controller
     public function index(){
         return view('admin');
     }
+    public function addcat(){
+        return view('addcat');
+    }
+    public function viewall(){
+        return view('viewrecords');
+    }
+    public function viewusers(){
+        return view('viewusers');
+    }
 }
