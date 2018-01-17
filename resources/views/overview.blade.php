@@ -8,7 +8,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"><h4>Overview</h4></div>                   
                     <div class="panel-body">
-                        <h4>All of your records starting from most recent</h4>
+                        <h4>All of your records starting from most recent date</h4>
                         <br>
                          <table class="table table-striped">
                             <tr>
@@ -26,7 +26,7 @@
                         </tr>
                         @endforeach                        
                         <tr>
-                            <th colspan='4'>Total: {{$sum}} EUR</th>
+                            <!--<th colspan='4'>Total: {{$sum}} EUR</th>-->
                         </tr>
                         </table>
                     </div>

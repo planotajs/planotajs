@@ -1,13 +1,5 @@
 <!DOCTYPE html>
-<style>
-    body {
-            background: url(img/background1.jpg) no-repeat center center fixed; 
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-        }
-</style>
+
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
@@ -26,6 +18,15 @@
     <script src="/js/jquery-3.2.1.min.js"></script>
     
 </head>
+<style>
+    body {
+            background: url(/img/background1.jpg) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+</style>
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
