@@ -16,7 +16,7 @@
                         @endif
                         {{ Form::open(['url'=>'/contact']) }}
                             <div class="form-group{{ $errors->has('message') ? ' has-error' : '' }}">
-                                    {!! Form::label('message', 'Message (*)', ['class' => 'control-label']) !!}
+                                    {!! Form::label('message', Lang::get('messages.formMessage'), ['class' => 'control-label']) !!}
                                     
                                     {!! Form::textarea('message', '', ['class' => 'form-control']) !!}                                 
                                     
@@ -28,7 +28,7 @@
                                     @endif                                      
                             </div>
                             <div class="col-md-8 col-md-offset-4">
-                                {!! Form::submit('Send', ['class' => 'btn btn-primary']) !!}
+                                {!! Form::submit(Lang::get('messages.sendBtn'), ['class' => 'btn btn-primary']) !!}
                             </div>  
                         {!! Form::close() !!}
                     </div>

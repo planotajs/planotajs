@@ -12,7 +12,7 @@
                          <div id="form">
                             {{ Form::open(['url'=>'/edit']) }}
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                {!! Form::label('name', 'Name (*)', ['class' => 'col-md-4 control-label']) !!}
+                                {!! Form::label('name',Lang::get('messages.formName'), ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
                                 {!! Form::text('name', $record->name, ['class' => 'form-control']) !!}
                                 </div>
@@ -25,11 +25,11 @@
                             </div>
                             <br><br>
                             <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
-                                {!! Form::label('type', 'Type (*)', ['class' => 'col-md-4 control-label']) !!}
+                                {!! Form::label('type',Lang::get('messages.formType'), ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-4">
-                                {!!Form::radio('type', 'income', $income) !!}                                
+                                {!!Form::radio('type',Lang::get('messages.formIncome'), $income) !!}                                
                                 Income<br>                                
-                                {!! Form::radio('type', 'expense', !$income) !!}
+                                {!! Form::radio('type',Lang::get('messages.formExpense'), !$income) !!}
                                 Expense
                                  @if ($errors->has('type'))
                                  <br><br>
@@ -41,7 +41,7 @@
                             </div>
                             <br><br>
                              <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
-                                {!! Form::label('category', 'Category (*)', ['class' => 'col-md-4 control-label']) !!}
+                                {!! Form::label('category',Lang::get('messages.formCategory'), ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
                                 {!! Form::select('category', $categories, $record->category_id, ['class' => 'form-control']) !!}
                                  @if ($errors->has('category'))
@@ -54,7 +54,7 @@
                             </div>
                             <br><br>
                              <div class="form-group{{ $errors->has('date') ? ' has-error' : '' }}">
-                                {!! Form::label('date', 'Date (*)', ['class' => 'col-md-4 control-label']) !!}
+                                {!! Form::label('date',Lang::get('messages.formDate'), ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
                                 {!! Form::date('date', $record->date, ['class' => 'form-control']) !!}
                                  @if ($errors->has('date'))
@@ -67,7 +67,7 @@
                             </div>
                             <br><br>
                             <div class="form-group{{ $errors->has('sum') ? ' has-error' : '' }}">
-                                {!! Form::label('sum', 'Sum (*)', ['class' => 'col-md-4 control-label']) !!}
+                                {!! Form::label('sum',Lang::get('messages.formSum'), ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
                                 {!! Form::number('sum', $record->sum, ['class' => 'form-control', 'step' => '0.01']) !!}
                                  @if ($errors->has('sum'))
@@ -80,14 +80,14 @@
                             <br><br>
                             {{ Form::hidden('id', $record->id) }}
                             <div class="col-md-8 col-md-offset-4">
-                            {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+                            {!! Form::submit(Lang::get('messages.saveBtn'), ['class' => 'btn btn-primary']) !!}
                             </div>                            
                             {!! Form::close() !!}
                             <br><br>
                             {{ Form::open(['url'=>'/edit/delete']) }}
                                 {{ Form::hidden('id2', $record->id) }}
                                 <div class="col-md-8 col-md-offset-4">
-                                    {!! Form::submit('Delete record', ['class' => 'btn btn-primary']) !!}
+                                    {!! Form::submit(Lang::get('messages.deleteBtn'), ['class' => 'btn btn-primary']) !!}
                                 </div>
                             {!! Form::close() !!}
                         </div>

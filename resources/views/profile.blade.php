@@ -27,7 +27,7 @@
                         <div id="form">
                         {{ Form::open(['url'=>'/profile/edit']) }}
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                    {!! Form::label('name', 'Name (*)', ['class' => 'col-md-4 control-label']) !!}
+                    {!! Form::label('name', Lang::get('messages.formUserName'), ['class' => 'col-md-4 control-label']) !!}
                     <div class="col-md-6">
                     {!! Form::text('name', '', ['class' => 'form-control']) !!}
                      @if ($errors->has('name'))
@@ -39,7 +39,7 @@
                     </div>
                         <br>
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    {!! Form::label('email', 'Email (*)', ['class' => 'col-md-4 control-label']) !!}
+                    {!! Form::label('email', Lang::get('messages.formEmail'), ['class' => 'col-md-4 control-label']) !!}
                     <div class="col-md-6">
                         {!! Form::text('email', '', ['class' => 'form-control']) !!}
                     @if ($errors->has('email'))
@@ -51,7 +51,7 @@
                     <br>
                     </div>
                     <div class="form-group{{ $errors->has('cpassword') ? ' has-error' : '' }}">
-                    {!! Form::label('cpassword', 'Current password (*)', ['class' => 'col-md-4 control-label']) !!}
+                    {!! Form::label('cpassword', Lang::get('messages.formCurrPass'), ['class' => 'col-md-4 control-label']) !!}
                     <div class="col-md-6">
                     {!! Form::password('cpassword', ['class' => 'form-control']) !!}
                     @if ($errors->has('cpassword'))
@@ -63,7 +63,7 @@
                     </div>
                     <br>
                     <div class="form-group{{ $errors->has('npassword') ? ' has-error' : '' }}">
-                    {!! Form::label('npassword', 'New password', ['class' => 'col-md-4 control-label']) !!}
+                    {!! Form::label('npassword', Lang::get('messages.formNewPass'), ['class' => 'col-md-4 control-label']) !!}
                     <div class="col-md-6">
                     {!! Form::password('npassword', ['class' => 'form-control']) !!}
                     @if ($errors->has('npassword'))
@@ -75,7 +75,7 @@
                     </div>
                     <br>
                     <div class="form-group{{ $errors->has('npassword_confirmation') ? ' has-error' : '' }}">
-                    {!! Form::label('npassword_confirmation', 'New password confirmation', ['class' => 'col-md-4 control-label']) !!}
+                    {!! Form::label('npassword_confirmation', Lang::get('messages.formNewPass2'), ['class' => 'col-md-4 control-label']) !!}
                     <div class="col-md-6">
                     {!! Form::password('npassword_confirmation', ['class' => 'form-control']) !!}
                     @if ($errors->has('npassword_confirmation'))
@@ -88,7 +88,7 @@
                     
                     <div class="col-md-8 col-md-offset-4">                        
                         <button class ='btn btn-primary' id="cancel1" type="button" onclick="cancel();">@lang('messages.cancel')</button>
-                        {!! Form::submit('Update profile', ['class' => 'btn btn-primary']) !!}                        
+                        {!! Form::submit(Lang::get('messages.profileUpdate'), ['class' => 'btn btn-primary']) !!}                        
                     </div>
                     {!! Form::close() !!}
                     <br><br><br>
@@ -108,7 +108,7 @@
                                 </div>                            
                                 <div class="col-md-8 col-md-offset-4">
                                      <button class ='btn btn-primary' id="cancel2" type="button" onclick="cancel();">@lang('messages.cancel')</button>
-                                    {!! Form::submit('Delete profile', ['class' => 'btn btn-primary']) !!}                                   
+                                    {!! Form::submit(Lang::get('messages.deleteProfileBtn'), ['class' => 'btn btn-primary']) !!}                                   
                                 </div>
                             
                              {!! Form::close() !!}

@@ -20,7 +20,7 @@
                         @endif
                         {{ Form::open(['url'=>'/admin/addcat']) }}
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                {!! Form::label('name', 'Category name (*)', ['class' => 'col-md-4 control-label']) !!}
+                                {!! Form::label('name', Lang::get('messages.formCategoryName'), ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
                                 {!! Form::text('name', '', ['class' => 'form-control']) !!}                                 
                                 </div>
@@ -33,7 +33,7 @@
                             </div>
                         <br><br>
                             <div class="col-md-8 col-md-offset-4">
-                            {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
+                            {!! Form::submit(Lang::get('messages.addBtn'), ['class' => 'btn btn-primary']) !!}
                             </div>                            
                         {!! Form::close() !!}
                     </div>
