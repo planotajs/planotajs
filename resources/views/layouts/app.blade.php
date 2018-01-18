@@ -17,8 +17,7 @@
     <!--JQuery-->
     <script src="/js/jquery-3.2.1.min.js"></script>
     
-</head>
-<style>
+    <style>
     body {
             background: url(/img/background1.jpg) no-repeat center center fixed; 
             -webkit-background-size: cover;
@@ -26,7 +25,9 @@
             -o-background-size: cover;
             background-size: cover;
         }
-</style>
+    </style>    
+</head>
+
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
