@@ -6,15 +6,15 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h4>All users</h4></div>
+                    <div class="panel-heading"><h4>@lang('messages.allUsers')</h4></div>
                     <div class="panel-body">
                             <table class="table table-striped">
                                 <tr>
-                                    <th style="cursor:default">ID</th>
-                                    <th style="cursor:default">Name</th>
-                                    <th style="cursor:default">Email</th>
-                                    <th style="cursor:default">Role</th>  
-                                    <th style="cursor:default">Registrated at</th>
+                                    <th style="cursor:default">@lang('messages.userId')</th>
+                                    <th style="cursor:default">@lang('messages.userName')</th>
+                                    <th style="cursor:default">@lang('messages.email')</th>
+                                    <th style="cursor:default">@lang('messages.role')</th>  
+                                    <th style="cursor:default">@lang('messages.registered')</th>
                                 </tr>
                                     @foreach ($records as $rec)
                                         <tr>     

@@ -6,9 +6,9 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h4>Contact us</h4></div>
+                    <div class="panel-heading"><h4>@lang('messages.contact')</h4></div>
                     <div class="panel-body">
-                        <h4>Send a message to admin, if you have any questions or recommendations.<br><br>Admin will contact you via email.</h4>
+                        <h4>@lang('messages.contactH4')</h4>
                         @if (session('status'))
                             <div class="alert alert-success">
                                 {{ session('status') }}

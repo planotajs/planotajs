@@ -6,9 +6,9 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h4>Add</h4></div>
+                    <div class="panel-heading"><h4>@lang('messages.add')</h4></div>
                     <div class="panel-body">
-                        <h4>Add a new financial record by stating its name, type, category, date and sum.</h4>
+                        <h4>@lang('messages.addH4')</h4>
                         <br>
                         <div id="form">
                             {{ Form::open(['url'=>'/add']) }}

@@ -6,12 +6,17 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h4>Statistics</h4></div>
+                    <div class="panel-heading"><h4>@lang('messages.statistics')</h4></div>
                     <div class="panel-body">
                         <div class="dateSelector">
+<<<<<<< HEAD
                             <h4>Select time period</h4>
                             {{ Form::open(['url'=>'/statistics']) }}                                
                                 {!! Form::label('startdate', 'Start date (*)',  ['class' => 'col-md-4 control-label']) !!}
+=======
+                            <h4>@lang('messages.selectPeriod')</h4>
+                        {!! Form::label('date', 'Start date', ['class' => 'col-md-4 control-label']) !!}
+>>>>>>> 9a1d4e96992e918a43703d057c03f74ef62e5cd3
                                 <div class="col-md-6">
                                 {!! Form::date('startdate', '', ['class' => 'form-control']) !!}
                                  @if ($errors->has('startdate'))
@@ -39,16 +44,22 @@
                         <br><br>
                         <div class="panel-body">          
                         <hr>
+<<<<<<< HEAD
                         <h5>Total income: {{$income}}  EUR</h5>
                         <h5>Total expenses: {{$expenses}} EUR</h5>
                         <h5><b>Balance: {{$income+$expenses}} EUR</b></h5>
+=======
+                        <h5>@lang('messages.income'): {{$income}}  EUR</h5>
+                        <h5>@lang('messages.expenses'): {{$expenses}} EUR</h5>
+                        <h5><b>@lang('messages.balance'): {{$sum}} EUR</b></h5>
+>>>>>>> 9a1d4e96992e918a43703d057c03f74ef62e5cd3
                         <hr>
-                        <h4 style="text-align: center">Income statistics</h4>
+                        <h4 style="text-align: center">@lang('messages.incomeStats')</h4>
                             <table class="table table-striped">
                                 <tr>
-                                    <th>Category</th>
-                                    <th>Income</th>
-                                    <th>% of total income</th>
+                                    <th>@lang('messages.recordCategory')</th>
+                                    <th>@lang('messages.inc')</th>
+                                    <th>@lang('messages.incomePercentage')</th>
                                 </tr>
                                 @foreach ($icategories as $rec)
                                 <tr>
@@ -59,12 +70,12 @@
                                 @endforeach
                             </table>
                         <hr>
-                        <h4 style="text-align: center">Expenses statistics</h4>
+                        <h4 style="text-align: center">@lang('messages.expensesStats')</h4>
                             <table class="table table-striped">
                                 <tr>
-                                    <th>Category</th>
-                                    <th>Expenses</th>
-                                    <th>% of total expenses</th>
+                                    <th>@lang('messages.recordCategory')</th>
+                                    <th>@lang('messages.exp')</th>
+                                    <th>@lang('messages.expensesPercentage')</th>
                                 </tr>
                                 @foreach ($ecategories as $rec)
                                 <tr>
