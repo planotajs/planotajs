@@ -22,7 +22,7 @@ return ['name'=>'Finanšu plānotājs',
         'welcomeList2'=>'Apskati detalizētu informāciju par savām finansēm',
         'welcomeList3'=>'Atjauno, rediģē un dzēs savus finanšu ierakstus',
         'welcomeList4'=>'Pievieno savus ikdienas ienākumus un tēriņus',
-        'allRecords'=>'Visi jūsu ieraksti sākot ar jaunākajiem',
+        'allRecords'=>'Visi jūsu ieraksti sakārtoti pēc datumiem dilstošā secībā',
         'recordName'=>'Nosaukums',
         'recordCategory'=>'Kategorija',
         'recordDate'=>'Datums',
@@ -84,5 +84,6 @@ return ['name'=>'Finanšu plānotājs',
         'start'=>'Sākuma datums',
         'end'=>'Beigu datums',
         'selectRecords'=>'Atlasīt',
-        'language'=>'Valoda'
+        'language'=>'Valoda',
+        'changeLang'=>'English'        
     ];

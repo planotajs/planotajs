@@ -85,5 +85,6 @@ return ['name'=>'FinancialPlanner',
         'start'=>'Start date',
         'end'=>'End date',
         'selectRecords'=>'Select records',
-        'language'=>'Language'
+        'language'=>'Language',
+        'changeLang'=>'Latviešu'
     ];
