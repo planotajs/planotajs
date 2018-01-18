@@ -80,5 +80,8 @@ return ['name'=>'Finanšu plānotājs',
         'formEmail'=>'E-pasts (*)',
         'formCurrPass'=>'Parole (*)',
         'formNewPass'=>'Jaunā parole',
-        'formNewPass2'=>'Jaunā parole atkārtoti'
+        'formNewPass2'=>'Jaunā parole atkārtoti',
+        'start'=>'Sākuma datums',
+        'end'=>'Beigu datums',
+        'selectRecords'=>'Atlasīt'
     ];

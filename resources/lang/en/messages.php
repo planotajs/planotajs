@@ -81,5 +81,8 @@ return ['name'=>'FinancialPlanner',
         'formEmail'=>'Email (*)',
         'formCurrPass'=>'Current password (*)',
         'formNewPass'=>'New password',
-        'formNewPass2'=>'New password confirmation'
+        'formNewPass2'=>'New password confirmation',
+        'start'=>'Start date',
+        'end'=>'End date',
+        'selectRecords'=>'Select records'
     ];

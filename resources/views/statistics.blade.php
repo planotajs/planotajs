@@ -11,7 +11,7 @@
                         <div class="dateSelector">
                             <h4>Select time period</h4>
                             {{ Form::open(['url'=>'/statistics']) }}                                
-                                {!! Form::label('startdate', 'Start date (*)',  ['class' => 'col-md-4 control-label']) !!}
+                                {!! Form::label('startdate', Lang::get('messages.start'),  ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
                                 {!! Form::date('startdate', '', ['class' => 'form-control']) !!}
                                  @if ($errors->has('startdate'))
@@ -20,7 +20,7 @@
                                     </span>
                                 @endif
                                 </div>
-                                {!! Form::label('enddate', 'End date (*)', ['class' => 'col-md-4 control-label']) !!}
+                                {!! Form::label('enddate', Lang::get('messages.end'), ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
                                 {!! Form::date('enddate', '', ['class' => 'form-control']) !!}
                                  @if ($errors->has('enddate'))
@@ -31,7 +31,7 @@
                                 </div>
                                 <br><br>
                                 <div class="col-md-12">
-                            {{ Form::submit('Select records', array('class' => 'btn')) }} 
+                            {!! Form::submit(Lang::get('messages.selectRecords'), array('class' => 'btn')) !!} 
                                 </div>
                             {!! Form::close() !!}
                             
@@ -39,16 +39,16 @@
                         <br><br>
                         <div class="panel-body">          
                         <hr>
-                        <h5>Total income: {{$income}}  EUR</h5>
-                        <h5>Total expenses: {{$expenses}} EUR</h5>
-                        <h5><b>Balance: {{$income+$expenses}} EUR</b></h5>
+                        <h5>@lang('messages.income'): {{$income}}  EUR</h5>
+                        <h5>@lang('messages.expenses'): {{$expenses}} EUR</h5>
+                        <h5><b>@lang('messages.balance'): {{$income+$expenses}} EUR</b></h5>
                         <hr>
-                        <h4 style="text-align: center">Income statistics</h4>
+                        <h4 style="text-align: center">@lang('messages.incomeStats')</h4>
                             <table class="table table-striped">
                                 <tr>
-                                    <th>Category</th>
-                                    <th>Income</th>
-                                    <th>% of total income</th>
+                                    <th>@lang('messages.recordCategory')</th>
+                                    <th>@lang('messages.inc')</th>
+                                    <th>@lang('messages.incomePercentage')</th>
                                 </tr>
                                 @foreach ($icategories as $rec)
                                 <tr>
@@ -59,12 +59,12 @@
                                 @endforeach
                             </table>
                         <hr>
-                        <h4 style="text-align: center">Expenses statistics</h4>
+                        <h4 style="text-align: center">@lang('messages.expensesStats')</h4>
                             <table class="table table-striped">
                                 <tr>
-                                    <th>Category</th>
-                                    <th>Expenses</th>
-                                    <th>% of total expenses</th>
+                                    <th>@lang('messages.recordCategory')</th>
+                                    <th>@lang('messages.exp')</th>
+                                    <th>@lang('messages.expensesPercentage')</th>
                                 </tr>
                                 @foreach ($ecategories as $rec)
                                 <tr>
