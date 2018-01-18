@@ -12,10 +12,10 @@
                         <div style="cursor:pointer" >
                             <table class="table table-striped">
                                 <tr>
-                                    <th style="cursor:default">Name</th>
-                                    <th style="cursor:default">Category</th>
-                                    <th style="cursor:default">Date</th>
-                                    <th style="cursor:default">Sum</th>
+                                    <th style="cursor:default">@lang('messages.recordName')</th>
+                                    <th style="cursor:default">@lang('messages.recordCategory')</th>
+                                    <th style="cursor:default">@lang('messages.recordDate')</th>
+                                    <th style="cursor:default">@lang('messages.recordSum')</th>
                                 </tr>
                                     @foreach ($records as $rec)
                                         <tr onclick="window.location='/edit/{{$rec->id}}';">                            
