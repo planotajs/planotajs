@@ -16,6 +16,7 @@ class UserTableSeeder extends Seeder
         User::create(array('name' => 'admin',
                            'email' => 'admin@planotajs.dev', 
                            'password' => bcrypt('secret'),
-                           'role' => 2));
+                           'role' => 2,
+                           'language' => 2));
     }
 }

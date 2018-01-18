@@ -83,5 +83,6 @@ return ['name'=>'Finanšu plānotājs',
         'formNewPass2'=>'Jaunā parole atkārtoti',
         'start'=>'Sākuma datums',
         'end'=>'Beigu datums',
-        'selectRecords'=>'Atlasīt'
+        'selectRecords'=>'Atlasīt',
+        'language'=>'Valoda'
     ];

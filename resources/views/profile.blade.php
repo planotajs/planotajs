@@ -18,6 +18,10 @@
                         <b>@lang('messages.administrator')</b>
                         @endif
                         <br>@lang('messages.registered'): <b>{{$created}}</b>
+                        <br>@lang('messages.language'): <b>@if($language==2)
+                            Latviešu
+                            @else English 
+                            @endif</b>
                         <br><br>
                         @if (session('status'))
                             <div class="alert alert-danger">

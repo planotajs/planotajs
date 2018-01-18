@@ -21,7 +21,8 @@ class ProfileController extends Controller
         $email = $user->email;
         $role = $user->role;
         $created = $user->created_at;
-        return view('profile', array('name' => $name, 'email' => $email, 'role' => $role, 'created' => $created));
+        $language = $user->language;
+        return view('profile', array('name' => $name, 'email' => $email, 'role' => $role, 'created' => $created, 'language'=>$language));
     }
     public function store(Request $request){
         $data = $request->all();
