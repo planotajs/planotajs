@@ -10,21 +10,38 @@
                     <div class="panel-body">
                         <div class="dateSelector">
                             <h4>Select time period</h4>
-                        {!! Form::label('date', 'Start date', ['class' => 'col-md-4 control-label']) !!}
+                            {{ Form::open(['url'=>'/statistics']) }}                                
+                                {!! Form::label('startdate', 'Start date (*)',  ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
-                                {!! Form::date('date', '', ['class' => 'form-control']) !!}
+                                {!! Form::date('startdate', '', ['class' => 'form-control']) !!}
+                                 @if ($errors->has('startdate'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('startdate') }}</strong>
+                                    </span>
+                                @endif
                                 </div>
-                        {!! Form::label('date', 'End date', ['class' => 'col-md-4 control-label']) !!}
+                                {!! Form::label('enddate', 'End date (*)', ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
-                                {!! Form::date('date', '', ['class' => 'form-control']) !!}
+                                {!! Form::date('enddate', '', ['class' => 'form-control']) !!}
+                                 @if ($errors->has('enddate'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('enddate') }}</strong>
+                                    </span>
+                                @endif    
                                 </div>
+                                <br><br>
+                                <div class="col-md-12">
+                            {{ Form::submit('Select records', array('class' => 'btn')) }} 
+                                </div>
+                            {!! Form::close() !!}
+                            
                         </div>
-                        <div class="panel-body">                            
-                        {{ Form::submit('Select records', array('class' => 'btn')) }}          
+                        <br><br>
+                        <div class="panel-body">          
                         <hr>
                         <h5>Total income: {{$income}}  EUR</h5>
                         <h5>Total expenses: {{$expenses}} EUR</h5>
-                        <h5><b>Balance: {{$sum}} EUR</b></h5>
+                        <h5><b>Balance: {{$income+$expenses}} EUR</b></h5>
                         <hr>
                         <h4 style="text-align: center">Income statistics</h4>
                             <table class="table table-striped">
