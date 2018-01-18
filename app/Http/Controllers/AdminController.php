@@ -12,6 +12,7 @@ class AdminController extends Controller
      public function __construct()
     {
         $this->middleware('admin');
+        $this->middleware('language');
     }
     public function index(){
         return view('admin');

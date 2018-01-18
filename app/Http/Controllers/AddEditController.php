@@ -7,6 +7,7 @@ use App\Categories;
 use App\Records;
 use App\User;
 use Auth;
+use App;
 use Illuminate\Support\Facades\Redirect;
 
 class AddEditController extends Controller
@@ -14,6 +15,7 @@ class AddEditController extends Controller
    public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('language');
     }
     
     public function add(){

@@ -34,4 +34,7 @@ class User extends Authenticatable
     public function isAdmin() {
         return ($this->role == 2);
     }
+    public function language() {
+        return ($this->language==2);
+    }
 }
