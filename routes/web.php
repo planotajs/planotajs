@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+App::setLocale('lv');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'ProfileController@index');
 Route::get('/overview', 'StatisticsController@overview');

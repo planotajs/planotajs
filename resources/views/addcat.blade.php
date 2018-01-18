@@ -23,13 +23,15 @@
                                 {!! Form::label('name', Lang::get('messages.formCategoryName'), ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
                                 {!! Form::text('name', '', ['class' => 'form-control']) !!}                                 
-                                </div>
+                                </div>                                
                                  @if ($errors->has('name'))
-                                 <br><br>
+                                 <div class='col-md-12'>
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
+                                </div>
                                 @endif   
+                                
                             </div>
                         <br><br>
                             <div class="col-md-8 col-md-offset-4">
