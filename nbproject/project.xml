@@ -6,7 +6,12 @@
             <name>laravel</name>
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>adminAdd</word>
+            <word>adminEdit</word>
+            <word>adminView</word>
             <word>Bilance</word>
+            <word>editRecord</word>
+            <word>profileUpdate</word>
             <word>recordDate</word>
             <word>recordName</word>
         </spellchecker-wordlist>

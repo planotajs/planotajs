@@ -6,18 +6,18 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h4>Profile</h4></div>
+                    <div class="panel-heading"><h4>@lang('messages.profile')</h4></div>
 
                     <div class="panel-body">
                         <h4><b>{{$name}}</b></h4>
                         <br><b>{{$email}}</b>
-                        <br>Role: 
+                        <br>@lang('messages.role'): 
                         @if ($role==1)
-                        <b>User</b>
+                        <b>@lang('messages.user')</b>
                         @else
-                        <b>Administrator</b>
+                        <b>@lang('messages.administrator')</b>
                         @endif
-                        <br>Registered at: <b>{{$created}}</b>
+                        <br>@lang('messages.registered'): <b>{{$created}}</b>
                         <br><br>
                         @if (session('status'))
                             <div class="alert alert-danger">
@@ -87,7 +87,7 @@
                     </div>
                     
                     <div class="col-md-8 col-md-offset-4">                        
-                        <button class ='btn btn-primary' id="cancel1" type="button" onclick="cancel();">Cancel</button>
+                        <button class ='btn btn-primary' id="cancel1" type="button" onclick="cancel();">@lang('messages.cancel')</button>
                         {!! Form::submit('Update profile', ['class' => 'btn btn-primary']) !!}                        
                     </div>
                     {!! Form::close() !!}
@@ -107,7 +107,7 @@
                                 </div>
                                 </div>                            
                                 <div class="col-md-8 col-md-offset-4">
-                                     <button class ='btn btn-primary' id="cancel2" type="button" onclick="cancel();">Cancel</button>
+                                     <button class ='btn btn-primary' id="cancel2" type="button" onclick="cancel();">@lang('messages.cancel')</button>
                                     {!! Form::submit('Delete profile', ['class' => 'btn btn-primary']) !!}                                   
                                 </div>
                             
@@ -116,8 +116,8 @@
                         </div>
                         
                         @if($errors=='[]')
-                        <button class ='btn btn-primary' id="edit" type="button" onclick="update();">Update profile</button><br><br>
-                        <button class ='btn btn-primary' id="del" type="button" onclick="deleteprofile();">Delete profile</button><br><br>
+                        <button class ='btn btn-primary' id="edit" type="button" onclick="update();">@lang('messages.profileUpdate')</button><br><br>
+                        <button class ='btn btn-primary' id="del" type="button" onclick="deleteprofile();">@lang('messages.profileDelete')</button><br><br>
                         @endif
                         
                         <script>

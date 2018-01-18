@@ -6,9 +6,9 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h4>Edit</h4></div>
+                    <div class="panel-heading"><h4>@lang('messages.edit')</h4></div>
                     <div class="panel-body">
-                        <h4>Click on any row to edit it</h4><br>
+                        <h4>@lang('messages.editH4')</h4><br>
                         <div style="cursor:pointer" >
                             <table class="table table-striped">
                                 <tr>
