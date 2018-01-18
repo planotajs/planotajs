@@ -75,4 +75,14 @@ class ProfileController extends Controller
         });
         return back()->with("status",'Message sent successfully!');
     }
+    public function lang(){
+        $curr = User::find(Auth::user()->id)->language;        
+        if($curr==2){
+            User::find(Auth::user()->id)->update(['language'=>1]);
+        } else {
+            User::find(Auth::user()->id)->update(['language'=>2]);
+        }
+        User::find(Auth::user()->id)->save();
+        return back();
+    }
 }

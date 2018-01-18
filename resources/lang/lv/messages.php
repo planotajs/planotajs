@@ -85,5 +85,6 @@ return ['name'=>'Finanšu plānotājs',
         'end'=>'Beigu datums',
         'selectRecords'=>'Atlasīt',
         'language'=>'Valoda',
-        'changeLang'=>'English'        
+        'changeLang'=>'English',
+        'changeLanguage'=>'Change language to '
     ];

@@ -28,12 +28,16 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <div id="form">                            
-                            {{ Form::open(['url'=>'/profile/edit']) }}
+                        <div id="form">
+                            <hr>
+                            {{ Form::open(['url'=>'/profile/changelanguage']) }}
                             <div class="button">
-                                <button class ='btn btn-primary' id="change" type="button" onclick="">@lang('messages.changeLang')</button><br><br>
-                                <!--{!! Form::button(Lang::get('messages.changeLang'), ['class' => 'btn btn-primary']) !!}-->
+                                {!! Form::label('id', Lang::get('messages.changeLanguage').Lang::get('messages.changeLang') , ['class' => 'col-md-4 control-label']) !!}
+                                {!! Form::submit(Lang::get('messages.changeLang'), ['class' => 'btn btn-primary']) !!}  
                             </div>
+                             {!! Form::close() !!} 
+                             <hr>
+                            {{ Form::open(['url'=>'/profile/edit']) }}
                             <br>
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                 {!! Form::label('name', Lang::get('messages.formUserName'), ['class' => 'col-md-4 control-label']) !!}
