@@ -18,35 +18,36 @@
                                 {!! Form::text('name', '', ['class' => 'form-control']) !!}                                 
                                 </div>
                                  @if ($errors->has('name'))
-                                 <br><br>
+                                 <div class="col-md-12">
+                                     <div class="col-md-offset-5">
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
+                                     </div>
+                                 </div>
                                 @endif   
                             </div>
                             <br><br>
                             <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
                                 {!! Form::label('type', Lang::get('messages.formType'), ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-4">
-                                {!!Form::radio('type', Lang::get('messages.formIncome'), ['class' => 'form-control']) !!}                                
-                                Income<br>                                
-                                {!! Form::radio('type', Lang::get('messages.formExpense'), ['class' => 'form-control']) !!}
-                                Expense
+                                {!!Form::radio('type', 'income', ['class' => 'form-control']) !!}                                
+                                {{Lang::get('messages.formIncome')}}<br>                                
+                                {!! Form::radio('type', 'expense', ['class' => 'form-control']) !!}
+                                {{Lang::get('messages.formExpense')}}
                                  @if ($errors->has('type'))
-                                 <br><br>
                                     <span class="help-block">
                                         <strong>{{ $errors->first('type') }}</strong>
                                     </span>
                                 @endif    
                                 </div>
                             </div>
-                            <br><br>
+                            <br><br><br>
                              <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
                                 {!! Form::label('category', Lang::get('messages.formCategory'), ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
                                 {!! Form::select('category', $categories, 's', ['class' => 'form-control']) !!}
                                  @if ($errors->has('category'))
-                                 <br><br>
                                     <span class="help-block">
                                         <strong>{{ $errors->first('category') }}</strong>
                                     </span>
@@ -59,12 +60,11 @@
                                 <div class="col-md-6">
                                 {!! Form::date('date', '', ['class' => 'form-control']) !!}
                                  @if ($errors->has('date'))
-                                 <br><br>
                                     <span class="help-block">
                                         <strong>{{ $errors->first('date') }}</strong>
                                     </span>
                                 @endif    
-                                </div>
+                                </div>                                
                             </div>
                             <br><br>
                             <div class="form-group{{ $errors->has('sum') ? ' has-error' : '' }}">
@@ -72,7 +72,6 @@
                                 <div class="col-md-6">
                                 {!! Form::number('sum', '', ['class' => 'form-control', 'step' => '0.01']) !!}
                                  @if ($errors->has('sum'))
-                                 <br><br>
                                     <span class="help-block">
                                         <strong>{{ $errors->first('sum') }}</strong>
                                     </span>
