@@ -6,10 +6,10 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h4>Statistics</h4></div>
+                    <div class="panel-heading"><h4>@lang('messages.statistics')</h4></div>
                     <div class="panel-body">
                         <div class="dateSelector">
-                            <h4>Select time period</h4>
+                            <h4>@lang('messages.selectPeriod')</h4>
                             {{ Form::open(['url'=>'/statistics']) }}                                
                                 {!! Form::label('startdate', Lang::get('messages.start'),  ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
