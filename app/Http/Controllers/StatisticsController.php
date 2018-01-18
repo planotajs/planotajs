@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Records;
 use Auth;
 use App;
+use App\Categories;
 
 class StatisticsController extends Controller
 {
@@ -21,11 +22,31 @@ class StatisticsController extends Controller
     }
     
     public function statistics(){
-        $income = Records::where('user_id', Auth::user()->id)->where('sum','>',0)->sum('sum');
+        $income = Records::where('user_id', Auth::user()->id)->where('sum','>',0)->sum('sum');       
         $expenses = Records::where('user_id', Auth::user()->id)->where('sum','<',0)->sum('sum');
         $sum = Records::where('user_id', Auth::user()->id)->sum('sum');
-        $records = Records::where('user_id', Auth::user()->id)->get();
-        $incRec = Records::where('user_id', Auth::user()->id)->where('category_id')->sum('sum');
-        return view('statistics', array('sum' => $sum, 'income' => $income, 'expenses' => $expenses, 'records' => $records, 'incRec' => $incRec));
+        $icategories = [];
+        $ecategories = [];
+        foreach (Records::where('user_id', Auth::user()->id)->where('sum','>',0)->orderBy('sum', 'desc')->get() as $i){
+            if(!in_array(Categories::find($i->category_id)->name, $icategories)){
+                array_push($icategories, Categories::find($i->category_id)->name);
+            }
+        }
+        foreach (Records::where('user_id', Auth::user()->id)->where('sum','<',0)->orderBy('sum', 'asc')->get() as $i){
+            if(!in_array(Categories::find($i->category_id)->name, $ecategories)){
+                array_push($ecategories, Categories::find($i->category_id)->name);
+            }
+        }
+        $icsum =[];
+        $ecsum =[];
+        foreach($icategories as $c){
+            $icid = Categories::where('name', $c)->first()->id;
+            $icsum[$c]=Records::where('user_id', Auth::user()->id)->where('category_id', $icid)->where('sum','>',0)->sum('sum');
+        }
+        foreach($ecategories as $c){
+            $ecid = Categories::where('name', $c)->first()->id;
+            $ecsum[$c]=Records::where('user_id', Auth::user()->id)->where('category_id', $ecid)->where('sum','<',0)->sum('sum');
+        }  
+        return view('statistics', array('sum' => $sum, 'income' => $income, 'expenses' => $expenses, 'icategories' => $icategories, 'icsum'=>$icsum, 'ecategories' => $ecategories, 'ecsum'=>$ecsum));
     }
 }

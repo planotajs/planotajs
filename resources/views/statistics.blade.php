@@ -33,11 +33,11 @@
                                     <th>Income</th>
                                     <th>% of total income</th>
                                 </tr>
-                                @foreach ($records as $rec)
+                                @foreach ($icategories as $rec)
                                 <tr>
-                                    <td>{{$rec->category->name}}</td>
-                                    <td>{{$sum}}</td>
-                                    <td>{{$sum / $sum * 100}} %</td>
+                                    <td>{{$rec}}</td>
+                                    <td>{{$icsum[$rec]}}</td>
+                                    <td>{{number_format($icsum[$rec] / $income * 100.00, 2)}} %</td>
                                 </tr>
                                 @endforeach
                             </table>
@@ -49,11 +49,11 @@
                                     <th>Expenses</th>
                                     <th>% of total expenses</th>
                                 </tr>
-                                @foreach ($records as $rec)
+                                @foreach ($ecategories as $rec)
                                 <tr>
-                                    <td>{{$rec->category->name}}</td>
-                                    <td>{{$sum}}</td>
-                                    <td>{{$sum / $sum * 100}} %</td>
+                                    <td>{{$rec}}</td>
+                                     <td>{{$ecsum[$rec]}}</td>
+                                    <td>{{number_format($ecsum[$rec] / $expenses * 100.00, 2)}} %</td>
                                 </tr>
                                 @endforeach
                             </table>
