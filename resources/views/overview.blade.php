@@ -6,16 +6,16 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h4>Overview</h4></div>                   
+                    <div class="panel-heading"><h4>@lang('messages.overview')</h4></div>                   
                     <div class="panel-body">
-                        <h4>All of your records starting from most recent date</h4>
+                        <h4>@lang('messages.allRecords')</h4>
                         <br>
                          <table class="table table-striped">
                             <tr>
-                                <th>Name</th>
-                                <th>Category</th>
-                                <th>Date</th>
-                                <th>Sum</th>
+                                <th>@lang('messages.recordName')</th>
+                                <th>@lang('messages.recordCategory')</th>
+                                <th>@lang('messages.recordDate')</th>
+                                <th>@lang('messages.recordSum')</th>
                             </tr>
                         @foreach ($records as $rec)
                         <tr>                            
@@ -26,7 +26,7 @@
                         </tr>
                         @endforeach                        
                         <tr>
-                            <th colspan='4'>Balance: {{$sum}} EUR</th>
+                            <th colspan='4'>@lang('messages.balance'): {{$sum}} EUR</th>
                         </tr>
                         </table>
                     </div>

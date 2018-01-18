@@ -7,6 +7,8 @@
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
             <word>Bilance</word>
+            <word>recordDate</word>
+            <word>recordName</word>
         </spellchecker-wordlist>
     </configuration>
 </project>

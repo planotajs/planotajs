@@ -21,5 +21,12 @@ return ['name'=>'FinancialPlanner',
         'welcomeList1'=>'Make decisions based on given information and improve your finances',
         'welcomeList2'=>'Update, edit and delete your financial records',
         'welcomeList3'=>'See detailed information about your finances',
-        'welcomeList4'=>'Add your daily incomes and expenses'
+        'welcomeList4'=>'Add your daily incomes and expenses',
+        'allRecords'=>'All of your records starting from most recent date',
+        'recordName'=>'Name',
+        'recordCategory'=>'Category',
+        'recordDate'=>'Date',
+        'recordSum'=>'Sum',
+        'balance'=>'Balance',
+        'dashboard'=>'Dashboard'
     ];
