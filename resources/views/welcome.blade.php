@@ -20,14 +20,14 @@
 @section('content')
     <body>
     <div class="jumbotron">  
-        <h1>Financial Planner</h1>
-        <h3>Financial Planner is a simple tool created for you to keep your personal finance management much easier.</h3>
+        <h1>@lang('messages.welcomeH1')</h1>
+        <h3>@lang('messages.welcomeH3')</h3>
         <div class="list">
             <ul>
-                <li>Make decisions based on given information and improve your finances</li>
-                <li>Update, edit and delete your financial records</li>
-                <li>See detailed information about your finances</li>
-                <li>Add your daily incomes and expenses</li>            
+                <li>@lang('messages.welcomeList1')</li>
+                <li>@lang('messages.welcomeList2')</li>
+                <li>@lang('messages.welcomeList3')</li>
+                <li>@lang('messages.welcomeList4')</li>            
             </ul>
         </div>
     </div>

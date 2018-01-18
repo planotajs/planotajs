@@ -15,5 +15,11 @@ return ['name'=>'FinancialPlanner',
         'login'=>'Login',
         'register'=>'Register',
         'admin'=>'Admin',
-        'contact'=>'Contact Us'
+        'contact'=>'Contact Us',
+        'welcomeH1'=>'Financial Planner',
+        'welcomeH3'=>'Financial Planner is a simple tool created for you to keep your personal finance management much easier.',
+        'welcomeList1'=>'Make decisions based on given information and improve your finances',
+        'welcomeList2'=>'Update, edit and delete your financial records',
+        'welcomeList3'=>'See detailed information about your finances',
+        'welcomeList4'=>'Add your daily incomes and expenses'
     ];

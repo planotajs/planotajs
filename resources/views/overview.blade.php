@@ -26,7 +26,7 @@
                         </tr>
                         @endforeach                        
                         <tr>
-                            <!--<th colspan='4'>Total: {{$sum}} EUR</th>-->
+                            <th colspan='4'>Balance: {{$sum}} EUR</th>
                         </tr>
                         </table>
                     </div>
