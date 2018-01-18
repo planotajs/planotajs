@@ -6,32 +6,49 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h4>@lang('messages.statistics')</h4></div>
+                    <div class="panel-heading"><h4>Statistics</h4></div>
                     <div class="panel-body">
                         <div class="dateSelector">
-                            <h4>@lang('messages.selectPeriod')</h4>
-                        {!! Form::label('date', 'Start date', ['class' => 'col-md-4 control-label']) !!}
+                            <h4>Select time period</h4>
+                            {{ Form::open(['url'=>'/statistics']) }}                                
+                                {!! Form::label('startdate', 'Start date (*)',  ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
-                                {!! Form::date('date', '', ['class' => 'form-control']) !!}
+                                {!! Form::date('startdate', '', ['class' => 'form-control']) !!}
+                                 @if ($errors->has('startdate'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('startdate') }}</strong>
+                                    </span>
+                                @endif
                                 </div>
-                        {!! Form::label('date', 'End date', ['class' => 'col-md-4 control-label']) !!}
+                                {!! Form::label('enddate', 'End date (*)', ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
-                                {!! Form::date('date', '', ['class' => 'form-control']) !!}
+                                {!! Form::date('enddate', '', ['class' => 'form-control']) !!}
+                                 @if ($errors->has('enddate'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('enddate') }}</strong>
+                                    </span>
+                                @endif    
                                 </div>
+                                <br><br>
+                                <div class="col-md-12">
+                            {{ Form::submit('Select records', array('class' => 'btn')) }} 
+                                </div>
+                            {!! Form::close() !!}
+                            
                         </div>
-                        <div class="panel-body">                            
-                        {{ Form::submit('Select records', array('class' => 'btn')) }}          
+                        <br><br>
+                        <div class="panel-body">          
                         <hr>
-                        <h5>@lang('messages.income'): {{$income}}  EUR</h5>
-                        <h5>@lang('messages.expenses'): {{$expenses}} EUR</h5>
-                        <h5><b>@lang('messages.balance'): {{$sum}} EUR</b></h5>
+                        <h5>Total income: {{$income}}  EUR</h5>
+                        <h5>Total expenses: {{$expenses}} EUR</h5>
+                        <h5><b>Balance: {{$income+$expenses}} EUR</b></h5>
                         <hr>
-                        <h4 style="text-align: center">@lang('messages.incomeStats')</h4>
+                        <h4 style="text-align: center">Income statistics</h4>
                             <table class="table table-striped">
                                 <tr>
-                                    <th>@lang('messages.recordCategory')</th>
-                                    <th>@lang('messages.inc')</th>
-                                    <th>@lang('messages.incomePercentage')</th>
+                                    <th>Category</th>
+                                    <th>Income</th>
+                                    <th>% of total income</th>
                                 </tr>
                                 @foreach ($icategories as $rec)
                                 <tr>
@@ -42,12 +59,12 @@
                                 @endforeach
                             </table>
                         <hr>
-                        <h4 style="text-align: center">@lang('messages.expensesStats')</h4>
+                        <h4 style="text-align: center">Expenses statistics</h4>
                             <table class="table table-striped">
                                 <tr>
-                                    <th>@lang('messages.recordCategory')</th>
-                                    <th>@lang('messages.exp')</th>
-                                    <th>@lang('messages.expensesPercentage')</th>
+                                    <th>Category</th>
+                                    <th>Expenses</th>
+                                    <th>% of total expenses</th>
                                 </tr>
                                 @foreach ($ecategories as $rec)
                                 <tr>

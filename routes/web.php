@@ -35,3 +35,4 @@ Route::get('/admin/addcat', 'AdminController@addcat');
 Route::get('/contact', 'ProfileController@contact');
 Route::post('/contact', 'ProfileController@sendmessage');
 Route::post('/admin/addcat', 'AdminController@store');
+Route::post('/statistics', 'StatisticsController@select');
