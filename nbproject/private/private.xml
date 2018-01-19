@@ -5,6 +5,11 @@
         <group>
             <file>file:/C:/wamp64/www/planotajs/app/Http/Controllers/AdminController.php</file>
             <file>file:/C:/wamp64/www/planotajs/routes/web.php</file>
+            <file>file:/C:/wamp64/www/planotajs/resources/lang/lv/messages.php</file>
+            <file>file:/C:/wamp64/www/planotajs/resources/views/profile.blade.php</file>
+            <file>file:/C:/wamp64/www/planotajs/resources/views/statistics.blade.php</file>
+            <file>file:/C:/wamp64/www/planotajs/resources/lang/en/messages.php</file>
+            <file>file:/C:/wamp64/www/planotajs/app/Http/Controllers/ProfileController.php</file>
         </group>
     </open-files>
 </project-private>

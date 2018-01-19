@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Records;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -54,6 +55,7 @@ class ProfileController extends Controller
         if(!Hash::check($data['password'],User::find(Auth::user()->id)->password)){
             return back()->with("status", "Wrong password");
         }
+        Records::where('user_id', Auth::user()->id)->delete();
         User::find(Auth::user()->id)->delete();
          echo "<script>alert('Your profile was deleted successfully');document.location='/'</script>";
         //return Redirect::to('/')->withMessage('Your profile was deleted successfully');
