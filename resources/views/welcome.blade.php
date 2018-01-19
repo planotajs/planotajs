@@ -1,22 +1,5 @@
 @extends('layouts.app')
-<style>
-    body {
-        background: url(img/background.jpg) no-repeat center center fixed!important; 
-        -webkit-background-size: cover!important;
-        -moz-background-size: cover!important;
-        -o-background-size: cover!important;
-        background-size: cover!important;
-    }
-    .jumbotron {
-        margin-top: 150px;
-        text-align: center;
-        background-color: rgba(255,255,255,0.9)!important;  
-        color: black!important;
-    }
-    .jumbotron li {
-        font-size: 17px;
-    }
-</style>
+
 @section('content')
 <div class="jumbotron">  
     <h1>@lang('messages.welcomeH1')</h1>

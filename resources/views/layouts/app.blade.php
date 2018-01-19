@@ -19,6 +19,15 @@
             -o-background-size: cover;
             background-size: cover;
         }
+    .jumbotron {
+        margin-top: 150px;
+        text-align: center;
+        background-color: rgba(255,255,255,0.9)!important;  
+        color: black!important;
+    }
+    .jumbotron li {
+        font-size: 17px;
+    }    
     </style>    
 </head>
 <body>
